@@ -3,7 +3,7 @@
   "%Name":"attak",
   "bboxMode":0,
   "bbox_bottom":47,
-  "bbox_left":14,
+  "bbox_left":7,
   "bbox_right":49,
   "bbox_top":16,
   "collisionKind":1,

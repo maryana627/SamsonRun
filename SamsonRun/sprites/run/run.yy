@@ -3,7 +3,7 @@
   "%Name":"run",
   "bboxMode":0,
   "bbox_bottom":47,
-  "bbox_left":21,
+  "bbox_left":13,
   "bbox_right":44,
   "bbox_top":24,
   "collisionKind":1,
