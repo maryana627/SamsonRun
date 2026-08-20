@@ -4,3 +4,5 @@ grav = 0.4
 
 hsp = 0
 vsp = 0
+
+mask_index = spr_player_idle;

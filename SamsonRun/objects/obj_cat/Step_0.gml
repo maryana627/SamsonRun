@@ -1,9 +1,18 @@
 var move = (keyboard_check(ord("D")) - keyboard_check(ord("A")));
 
 hsp=move * move_speed;
-x+= hsp;
+
+if (!place_meeting(x + hsp, y, obj_blok))
+{
+	x += hsp
+} else
+{
+	hsp = 0;
+}
+
 
 vsp += grav;
+
 
 if (keyboard_check_pressed(vk_space))
 {
