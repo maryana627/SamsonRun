@@ -6,3 +6,8 @@ hsp = 0
 vsp = 0
 
 mask_index = spr_player_idle;
+
+hp = 3;
+can_take_damage = true;
+
+coins = 0;
