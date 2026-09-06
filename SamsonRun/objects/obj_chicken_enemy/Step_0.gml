@@ -1,37 +1,39 @@
-/// @description Patrol between walls (and turn before an open edge).
-hsp = move_speed * direction_x;
+/// @description Walk on blocks and turn around at walls and ledges
+// Gravity keeps the slime on the platforms instead of letting it float.
+vsp = min(vsp + grav, 10);
 
-// A wall ahead marks the end of this patrol section. The open-edge check is
-// only meaningful while the chicken is standing on an obj_blok.
-var is_grounded = place_meeting(x, y + 1, obj_blok);
-if (place_meeting(x + hsp, y, obj_blok) || (is_grounded && !place_meeting(x + hsp, y + 1, obj_blok)))
+if (!place_meeting(x, y + vsp, obj_block))
 {
-    direction_x = -direction_x;
-    hsp = move_speed * direction_x;
+	y += vsp;
+}
+else
+{
+	while (!place_meeting(x, y + sign(vsp), obj_block))
+	{
+		y += sign(vsp);
+	}
+	vsp = 0;
 }
 
-if (!place_meeting(x + hsp, y, obj_blok))
+// Do not patrol while falling; resume as soon as the slime lands on a block.
+if (place_meeting(x, y + 1, obj_block))
 {
-    x += hsp;
+	var horizontal_move = move_speed * patrol_direction;
+
+	// Turn around before entering a wall or walking off the current platform.
+	if (place_meeting(x + horizontal_move, y, obj_block)
+	|| !place_meeting(x + horizontal_move, y + 1, obj_block))
+	{
+		patrol_direction = -patrol_direction;
+		horizontal_move = move_speed * patrol_direction;
+	}
+
+	// The wall check above ensures this move never passes through obj_block.
+	if (!place_meeting(x + horizontal_move, y, obj_block))
+	{
+		x += horizontal_move;
+	}
 }
 
-vsp += gravity;
-var vertical_steps = ceil(abs(vsp));
-var vertical_direction = sign(vsp);
-
-// Test every pixel of vertical motion. This prevents the enemy from
-// tunnelling through a thin or scaled obj_blok when its falling speed rises.
-repeat (vertical_steps)
-{
-    if (!place_meeting(x, y + vertical_direction, obj_blok))
-    {
-        y += vertical_direction;
-    }
-    else
-    {
-        vsp = 0;
-        break;
-    }
-}
-
-image_xscale = direction_x;
+// The original slime faces left; mirror only its drawing while walking right.
+visual_xscale = patrol_direction == -1 ? 1 : -1;
