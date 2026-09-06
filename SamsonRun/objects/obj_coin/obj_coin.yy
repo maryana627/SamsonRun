@@ -8,8 +8,8 @@
   "name":"obj_coin",
   "overriddenProperties":[],
   "parent":{
-    "name":"object",
-    "path":"folders/object.yy",
+    "name":"collect",
+    "path":"folders/collect.yy",
   },
   "parentObjectId":null,
   "persistent":false,

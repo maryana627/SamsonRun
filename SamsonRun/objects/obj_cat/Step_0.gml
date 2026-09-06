@@ -41,7 +41,11 @@ if (vsp != 0)
 	sprite_index =run;
 }else
 {
-	sprite_index = spr_player_idle;
+	if (can_take_damage == false)
+	{
+		sprite_index = spr_player_take_damage;
+	}else{
+	sprite_index = spr_player_idle;}
 }
 
 

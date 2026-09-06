@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"world",
-    "path":"folders/world.yy",
+    "path":"folders/Sprites/world.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
