@@ -1,5 +1,5 @@
 /// @description Deal one hit, using the player's existing invulnerability timer.
-if (other.can_take_damage)
+if (!squashing && other.can_take_damage)
 {
     other.sprite_index = spr_player_take_damage;
     other.hp -= 1;

@@ -11,3 +11,7 @@ hp = 3;
 can_take_damage = true;
 
 coins = 0;
+
+// Until a flag is touched, the room start is the fallback checkpoint.
+checkpoint_x = x;
+checkpoint_y = y;

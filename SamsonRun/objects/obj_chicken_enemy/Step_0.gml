@@ -1,5 +1,17 @@
 /// @description Walk on blocks and turn around at walls and ledges
-// Gravity keeps the slime on the platforms instead of letting it float.
+if (squashing)
+{
+	image_xscale += 0.12;
+	image_yscale = max(0.15, image_yscale - 0.16);
+	if (image_yscale <= 0.15)
+	{
+		instance_create_layer(x, bbox_bottom - sprite_get_height(sprite_index) * 0.15, "Instances", obj_coin);
+		instance_destroy();
+	}
+	exit;
+}
+
+// Gravity keeps the chicken on the platforms instead of letting it float.
 vsp = min(vsp + grav, 10);
 
 if (!place_meeting(x, y + vsp, obj_block))

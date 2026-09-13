@@ -9,3 +9,4 @@ sprite_scale = 2;
 visual_xscale = 1;
 image_xscale = sprite_scale;
 image_yscale = sprite_scale;
+squashing = false;

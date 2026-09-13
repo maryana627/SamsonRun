@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_blok",
+  "%Name":"obj_arrow",
   "eventList":[],
   "managed":true,
-  "name":"obj_blok",
+  "name":"obj_arrow",
   "overriddenProperties":[],
   "parent":{
     "name":"object",
@@ -28,9 +28,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_blok",
-    "path":"sprites/spr_blok/spr_blok.yy",
+    "name":"spr_arrow",
+    "path":"sprites/spr_arrow/spr_arrow.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }
