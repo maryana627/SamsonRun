@@ -1,2 +1,8 @@
-global.button_1 = true;
-image_speed = 0.2;
+if (button_id == 1)
+{
+	global.button_1 = true
+}
+if (button_id == 2)
+{
+	global.button_1 = true
+}

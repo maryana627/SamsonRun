@@ -83,3 +83,9 @@ if(hp <= 0) {
 	can_take_damage = true;
 	alarm[0] = -1;
 }
+
+if (keyboard_check_pressed(ord ("E")) && can_shoot == true)
+{
+	var shoot = instance_create_layer(x,y, layer,Obj_shoot);
+	shoot.direction_x = image_xscale;
+}

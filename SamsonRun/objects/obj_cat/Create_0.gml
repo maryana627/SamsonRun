@@ -16,5 +16,8 @@ coins = 0;
 checkpoint_x = x;
 checkpoint_y = y;
 
+can_shoot = false;
 
 global.button_1 = false;
+global.button_2 = false;
+global.button_3 = false;
